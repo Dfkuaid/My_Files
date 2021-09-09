@@ -1,0 +1,15 @@
+<h2 class="page-description" id="hitokoto_text" style="display: block;"></h2>
+<h3 class="page-author" id="hitokotoAuthor"></h3>
+
+<script>
+    fetch('https://v1.hitokoto.cn/?c=a&c=b')
+        .then(response => response.json())
+        .then(data => {
+            const hitokoto = document.getElementById('hitokoto_text')
+            const hitokoto_auth = document.getElementById('hitokotoAuthor')
+            hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+            hitokoto.innerText = data.hitokoto
+            hitokoto_auth.innerText = '——《' + data.from + '》——'
+        })
+        .catch(console.error)
+</script>
