@@ -1,0 +1,23 @@
+0
+Index: a
+Son_num: 2
+Father: a
+Son1 is b
+Son2 is d
+
+1
+Index: b
+Son_num: 1
+Father: a
+Son1 is c
+
+2
+Index: c
+Son_num: 0
+Father: b
+
+3
+Index: d
+Son_num: 0
+Father: a
+

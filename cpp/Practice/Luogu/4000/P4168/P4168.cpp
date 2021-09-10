@@ -1,0 +1,123 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#define ll long long
+#define mset(l,x) memset(l,x,sizeof(l))
+using namespace std;
+
+const int N = 100010;
+const int M = 320;
+const int INF = 0x3fffffff;
+
+int n, len, id[N], sub[M][2], a[N], q, ncnt;
+int sum[M][N], st[N], vis[N], mxc[M][M], ls;
+int mx[M][M];
+
+template <typename T>
+inline T Max(const T a, const T b) {
+    return a > b ? a : b;
+}
+
+inline void Disc(int *k) {
+    for (int i = 1; i <= n; i ++) st[i] = k[i];
+    sort(st + 1, st + n + 1);
+    ncnt = unique(st + 1, st + n + 1) - st - 1;
+    for (int i = 1; i <= n; i ++)
+      k[i] = lower_bound(st + 1, st + ncnt + 1, k[i]) - st;
+}
+
+inline void divide() {
+    len = sqrt(n); 
+    for (int i = 1; i <= n; i ++)
+      id[i] = (i - 1) / len + 1;
+    for (int i = 1; i <= id[n]; i ++) {
+        sub[i][0] = (i - 1) * len + 1;
+        sub[i][1] = i * len;
+    }
+    sub[id[n]][1] = min(sub[id[n]][1], n);
+}
+
+inline int query(int x,int y) {
+    int l = id[x], r = id[y], res = 0, resp = 0;
+    if (l == r){
+        for (int i = x; i <= y; i ++) {
+            if (res <= ++ vis[a[i]]) {
+                if (res < vis[a[i]] || resp > a[i]) resp = a[i];
+                res = vis[a[i]];
+            }
+        }
+        for (int i = x; i <= y; i ++) vis[a[i]] = 0;
+        return resp;
+    }
+    for (int i = x; i <= sub[l][1]; i ++) {
+        int upd = (++ vis[a[i]]) + sum[r - 1][a[i]] - sum[l][a[i]];
+        if (res <= upd) {
+            if (res < upd || resp > a[i]) resp = a[i];
+            res = upd;
+        }
+    }
+    for (int i = sub[r][0]; i <= y; i ++) {
+        int upd = (++ vis[a[i]]) + sum[r - 1][a[i]] - sum[l][a[i]];
+        if (res <= upd) {
+            if (res < upd || resp > a[i]) resp = a[i];
+            res = upd;
+        }
+    }
+    if (res <= mxc[l + 1][r - 1]) {
+        if (res < mxc[l + 1][r - 1] || resp > mx[l + 1][r - 1])
+          resp = mx[l + 1][r - 1];
+        res = mxc[l + 1][r - 1];
+    }
+    for (int i = x; i <= sub[l][1]; i ++) vis[a[i]] = 0;
+    for (int i = sub[r][0]; i <= y; i ++) vis[a[i]] = 0;
+    return resp;
+}
+
+int main(){
+    scanf("%d%d", &n, &q);
+    for (int i = 1; i <= n; i ++)
+      scanf("%d", &a[i]);
+    Disc(a); divide();
+    for (int i = 1; i <= n; i ++) {
+        sum[id[i]][a[i]] ++;
+        if (sum[id[i]][a[i]] >= mxc[id[i]][id[i]]) {
+            if (sum[id[i]][a[i]] > mxc[id[i]][id[i]] || mx[id[i]][id[i]] > a[i])
+              mx[id[i]][id[i]] = a[i];
+            mxc[id[i]][id[i]] = sum[id[i]][a[i]];
+        }
+    }
+    for (int i = 1; i <= id[n]; i ++)
+      for (int j = 1; j <= ncnt; j ++)
+        sum[i][j] += sum[i - 1][j];
+    for (int len = 2; len <= id[n]; len ++)
+      for (int l = 1; l + len <= id[n] + 1; l ++) {
+          int r = l + len - 1;
+          for (int i = sub[r][0]; i <= sub[r][1]; i ++) {
+              int upd = sum[r - 1][a[i]] - sum[l - 1][a[i]] + (++ vis[a[i]]);
+              if (mxc[l][r] <= upd) {
+                  if (mx[l][r] > a[i] || mxc[l][r] < upd)
+                    mx[l][r] = a[i];
+                  mxc[l][r] = upd;
+               }
+          }
+          for (int i = sub[r][0]; i <= sub[r][1]; i ++) vis[a[i]] = 0;
+          if (mxc[l][r] <= mxc[l][r - 1]) {
+              if (mx[l][r] > mx[l][r - 1] || mxc[l][r] < mxc[l][r - 1])
+                mx[l][r] = mx[l][r - 1];
+              mxc[l][r] = mxc[l][r - 1];
+          }
+      }
+    while (q --) {
+        int l, r; scanf("%d%d", &l, &r);
+        if (l > r) swap(l, r);
+        l = ((l + ls - 1) % n) + 1;
+        r = ((r + ls - 1) % n) + 1;
+        if (l > r) swap(l, r);
+        ls = st[query(l, r)];
+        printf("%d\n", ls);
+    }
+    return 0;
+}
