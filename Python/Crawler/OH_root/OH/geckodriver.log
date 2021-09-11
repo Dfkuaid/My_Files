@@ -1,0 +1,60 @@
+1595338079366	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\86130\\AppData\\Local\\Temp\\rust_mozprofileqVwARn"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595338083611	Marionette	INFO	Listening on port 13014
+1595338083857	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.ohmanhua.com/js/style.js, line 9: unreachable code after return statement
+JavaScript error: https://www.ohmanhua.com/worker.js, line 2: ReferenceError: importScripts is not defined
+1595338123164	Marionette	INFO	Stopped listening on port 13014
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1595338354074	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\86130\\AppData\\Local\\Temp\\rust_mozprofileIKFRnq"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595338356744	Marionette	INFO	Listening on port 13349
+1595338357190	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.ohmanhua.com/js/style.js, line 9: unreachable code after return statement
+JavaScript error: https://www.ohmanhua.com/worker.js, line 2: ReferenceError: importScripts is not defined
+1595338377569	Marionette	INFO	Stopped listening on port 13349
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1595338518798	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\86130\\AppData\\Local\\Temp\\rust_mozprofileIA3trm"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595338521354	Marionette	INFO	Listening on port 13592
+1595338521417	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.ohmanhua.com/js/style.js, line 9: unreachable code after return statement
+JavaScript error: https://www.ohmanhua.com/worker.js, line 2: ReferenceError: importScripts is not defined
+1595338544138	Marionette	INFO	Stopped listening on port 13592
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1595947780172	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\86130\\AppData\\Local\\Temp\\rust_mozprofileuiOfxr"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595947783132	Marionette	INFO	Listening on port 4715
+1595947783292	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.ohmanhua.com/js/style.js, line 9: unreachable code after return statement
+JavaScript error: https://www.ohmanhua.com/worker.js, line 2: ReferenceError: importScripts is not defined
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: this.browser.driver.dialogObserver is null
+1595947862676	Marionette	INFO	Stopped listening on port 4715
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1595947879812	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\86130\\AppData\\Local\\Temp\\rust_mozprofiletTY5BX"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1595947882059	Marionette	INFO	Listening on port 4935
+1595947882447	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.ohmanhua.com/js/style.js, line 9: unreachable code after return statement
+JavaScript error: https://www.ohmanhua.com/worker.js, line 2: ReferenceError: importScripts is not defined
+1595947948120	Marionette	INFO	Stopped listening on port 4935
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
