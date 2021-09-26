@@ -35,6 +35,7 @@ int main() {
             /*j must not be in st[], so a[k] < a[i] < a[j].*/
             /*And a[k] is the minnest one which is lower than a[j] in a[j + 1...].*/
             f[i] = (f[k] - GS(j, k - 1) + MOD) % MOD;
+            /*Find the pos that cannot be divided, and delete the lllegal status.*/
         }
         (f[i] += GS(st[stp], i - 1)) %= MOD;
         sum[i] = (sum[i - 1] + f[i]) % MOD, st[++ stp] = i;
