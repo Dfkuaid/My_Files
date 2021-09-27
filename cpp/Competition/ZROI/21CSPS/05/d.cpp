@@ -56,28 +56,39 @@ int n, on_border[N];
 vector <pii > edges;
 set <Traingle> traingles;
 
+/*Find the convex hull, and get the initial traingles at the same time.*/
+/*Notice: We have no necessary to save the convex hull, it's useless.*/
 void traingles_init() {
     int lst = 0;
     do {
         int nxt = 0; if (!lst) nxt = 1;
+        /*If Starting from the initial point, all points on the boundary 
+          should be arranged in a clockwise direction.*/
         for (int i = 0; i < n; ++ i)
           if (ccw(lst, nxt, i) == 1) nxt = i;
+        /*Add the edge and the traingle to the set.*/
         edges.push_back({lst, nxt});
         if (lst && nxt) traingles.insert({0, nxt, lst});
         on_border[lst] = true; lst = nxt;
     } while (lst);
 }
 
+/*Use the points which are not on the boundary to try to divide the traingles.*/
 void traingles_divide() {
     for (int i = 0; i < n; ++ i) {
         if (on_border[i]) continue;
         Traingle target;
+        /*If the point is on the same side for all three sides of a triangle, 
+         * it must be included by this triangle. We use clockwise and counter-
+         * clockwise directions to judge whether it is on the same side*/
         for (auto it : traingles)
           if (ccw(it.a, it.b, i) == 1 
               && ccw(it.b, it.c, i) == 1 
               && ccw(it.c, it.a, i) == 1) {
               target = it; break;
           }
+        /*After find the corresponding traingle, delete it from the set,
+         * and add the new traingles and edges to the set.*/
         traingles.erase(target);
         traingles.insert({target.a, target.b, i});
         traingles.insert({target.b, target.c, i});
@@ -93,6 +104,7 @@ int get_ans() {
     for (auto &e : edges) {
         int u = e.first, v = e.second;
         vector <int> a, b; cmp_std = u;
+        /*Divide the points to two groups.*/
         for (int i = 0; i < n; ++ i) {
             if (ccw(u, v, i) == -1) a.push_back(i);
             if (ccw(u, v, i) == +1) b.push_back(i);
@@ -105,6 +117,7 @@ int get_ans() {
         for (int i = 0; i < (int)c.size(); ++ i) pos[c[i]] = i;
         bool ok = true;
         int j = 0, k = -1;
+        /*use two-pointers to get the answer.*/
         for (int i = 0; i < (int)a.size(); ++ i) {
             while (j < (int)b.size() && ccw(a[i], u, b[j]) == -1)
               k = max(k, pos[b[j]]), ++ j;

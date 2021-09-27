@@ -16,6 +16,7 @@ inline void add_edge(int u, int v) {
 
 int n, m, q[N], frt, tal, T1, T2, T3, type[N][3];
 
+/*Use topo to divide the node to different groups.*/
 void topo() {
     frt = 0, tal = -1;
     for (int i = 1; i <= n; ++ i)
