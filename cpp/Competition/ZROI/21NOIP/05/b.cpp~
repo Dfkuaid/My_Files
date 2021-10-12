@@ -32,7 +32,7 @@ inline bool Solve(int l,int r) {
         if (v[c[i]].size() == 1) continue;
         int tole = v[c[i]][1] - v[c[i]][0]; flag = 1;
         for (int j = 2; j < v[c[i]].size(); ++ j)
-          if (tole != v[c[i]][j] - v[c[i]][j - 1]) {flag = 0; break;}
+          if (tole != v[c[i]][j] - v[c[i]][j - 1]) {flag=0; break;}
         if (!flag) break; if (g == -1) g = tole; else g = gcd(g, tole);
     }
     for (int i = 1; i <= ct; ++ i) v[c[i]].clear();
