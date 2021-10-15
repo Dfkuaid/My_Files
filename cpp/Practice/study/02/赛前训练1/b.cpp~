@@ -1,0 +1,71 @@
+#define LOCAL
+#include <bits/stdc++.h>
+#define mset(l, x) memset(l, x, sizeof(l))
+using namespace std;
+
+const int N = 1010;
+const int INF = 0x3fffffff;
+
+template <typename T> inline void read(T &x) {
+    x = 0; int f = 1; char c = getchar();
+    for (; !isdigit(c); c = getchar()) if (c = '-') f = -f;
+    for (; isdigit(c); c = getchar()) x = x * 10 + c - '0';
+    x *= f;
+}
+
+struct Edge {int u, v, w, nxt;} e[N];
+
+int t, n, m, head[N], ecnt(1), tag[N], g[N], f[N], sum, ans = INF;
+
+inline void reset() {
+    mset(head, 0); mset(tag, 0); ecnt = 1;
+}
+
+inline void add_edge(int u, int v, int w) {
+    e[ecnt].u = u, e[ecnt].v = v, e[ecnt].w = w;
+    e[ecnt].nxt = head[u], head[u] = ecnt ++;
+}
+
+void get_init(int x, int fa) {
+    g[x] = tag[x], f[x] = 0;
+    for (int i = head[x]; i; i = e[i].nxt) {
+        if (e[i].v == fa) continue;
+        get_init(e[i].v, x); g[x] += g[e[i].v];
+        f[x] += f[e[i].v] + e[i].w * g[e[i].v];
+    }
+}
+
+void dp(int x, int fa) {
+    for (int i = head[x]; i; i = e[i].nxt) {
+        if (e[i].v == fa) continue;
+        f[e[i].v] = f[x] - 2 * e[i].w * g[e[i].v] + e[i].w * sum;
+        dp(e[i].v, x);
+    }
+}
+
+int main() {
+#ifdef LOCAL
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+    read(t);
+    while (t --) {
+        read(n); reset(); ans = INF;
+        for (int i = 1; i < n; ++ i) {
+            int u, v, w; read(u); read(v); read(w);
+            add_edge(u, v, w); add_edge(v, u, w);
+        }
+        read(m);
+        for (int i = 1; i <= m; ++ i) {
+            int x; read(x); read(tag[x]); tag[x] *= 2;
+        }
+        get_init(1, 0); sum = g[1]; dp(1, 0);
+        for (int i = 1; i <= n; ++ i)
+          ans = min(ans, f[i]);
+        printf("%d\n", ans);
+        for (int i = 1; i <= n; ++ i)
+          if (f[i] == ans) printf("%d ", i);
+        printf("\n");
+    }
+    return 0;
+}
