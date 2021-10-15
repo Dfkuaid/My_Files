@@ -31,7 +31,7 @@ inline void add_edge(int u, int v, ll w) {
 
 priority_queue <plli > q;
 
-int vis[N], pre[N]; ll dis[N];
+int vis[N]; ll dis[N];
 
 void dijkstra(int u) {
     mset(vis, 0); mset(dis, 0x3f);
@@ -41,7 +41,7 @@ void dijkstra(int u) {
         if (vis[x]) continue; vis[x] = true;
         for (int i = head[x]; i; i = e[i].nxt)
           if (dis[e[i].v] > dis[x] + e[i].w) {
-              dis[e[i].v] = dis[x] + e[i].w; pre[e[i].v] = x;
+              dis[e[i].v] = dis[x] + e[i].w;
               q.push(mp(-dis[e[i].v], e[i].v));
           }
     }
@@ -52,10 +52,9 @@ int fath[N], dep[N], fa[N]; ll val[N], f[N];
 inline int find(int x) {while (x != fa[x]) x = fa[x] = fa[fa[x]]; return x;}
 
 void get_info(int x, int father) {
-    fath[x] = father, dep[x] = dep[father] + 1;
+    fath[x] = father, dep[x] = dep[father] + 1, vis[x] = 1;
     for (int i = head[x]; i; i = e[i].nxt) {
-        if (e[i].v == father) continue;
-        if (dis[e[i].v] != dis[x] + e[i].w) continue;
+        if (vis[e[i].v] || dis[e[i].v] != dis[x] + e[i].w) continue;
         e[i].tag = 1; get_info(e[i].v, x);
     }
 }
@@ -97,7 +96,7 @@ signed main() {
         int u, v; ll w; read(u), read(v), read(w);
         add_edge(u, v, w), add_edge(v, u, w);
     }
-    dijkstra(st); get_info(st, 0);
+    dijkstra(st); mset(vis, 0); get_info(st, 0);
     for (int i = 2; i < ecnt; i += 2) {
         if (e[i].tag || e[i ^ 1].tag) continue;
         et[ect2] = e[i]; et[ect2 ++].val = calc(i);
