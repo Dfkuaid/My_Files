@@ -48,11 +48,11 @@ inline bool cmp(int a, int b) {return a > b;}
 void dp(int x, int fa) {
     f[x] = 0;
     for (int i = head[x]; i; i = e[i].nxt)
-      if (e[i].v != fa && i != tag && i ^ 1 != tag)
+      if (e[i].v != fa && i != tag && (i ^ 1) != tag)
         dp(e[i].v, x);
     gcnt = 0;
     for (int i = head[x]; i; i = e[i].nxt)
-      if (e[i].v != fa && i != tag && i ^ 1 != tag)
+      if (e[i].v != fa && i != tag && (i ^ 1) != tag)
         g[++ gcnt] = f[e[i].v];
     if (!gcnt) return; sort(g + 1, g + gcnt + 1, cmp);
     for (int i = 1; i <= gcnt; ++ i)
@@ -84,7 +84,7 @@ int main() {
           l = mid + 1, ans = mid;
         else r = mid - 1;
     }
-    pii ans1 = solve(ans), ans2 = mp(INF, -INF);
+    pii ans1 = solve(ans), ans2 = mp(-INF, INF);
     if (ans + 1 <= pcnt) ans2 = solve(ans + 1);
     ans = Min(Max(ans1.first, ans1.second), Max(ans2.first, ans2.second));
     printf("%d", ans); return 0;
