@@ -83,16 +83,28 @@
    - [贰零贰壹·伍月](https://www.cnblogs.com/Dfkuaid-210/p/14820859.html)
    - [贰零贰壹·陆月](https://www.cnblogs.com/Dfkuaid-210/p/14946053.html)
  - **关于我想了很久才想出这题咋做这档事 · 题解**
-   - [CF323C Two permutations](https://www.cnblogs.com/Dfkuaid-210/p/CF323C.html)
-   - [CF386B Fly, freebies, fly!](https://www.cnblogs.com/Dfkuaid-210/p/CF386B.html)
-   - [CF864E Fire](https://www.cnblogs.com/Dfkuaid-210/p/CF864E.html)
-   - [CF1527D MEX Tree](https://www.cnblogs.com/Dfkuaid-210/p/CF1527D.html)
-   - [CF1534F1 Falling Sand (Easy Version)](https://www.cnblogs.com/Dfkuaid-210/p/CF1534F1.html)
-   - [UVA1519 Dictionary Size](https://www.cnblogs.com/Dfkuaid-210/p/UVA1519.html)
-   - [UVA10917 Walk Through the Forest](https://www.cnblogs.com/Dfkuaid-210/p/UVA10917.html)
-   - [UVA11478 Halum](https://www.cnblogs.com/Dfkuaid-210/p/UVA11478.html)
-   - [陌上花开](https://www.cnblogs.com/Dfkuaid-210/p/P3810.html)
-   - [洛谷 P1434 滑雪](https://www.cnblogs.com/Dfkuaid-210/p/11929130.html)
+   - Codeforces
+     - [Codeforces Round #751 (Div. 2) 题解](https://www.cnblogs.com/Dfkuaid-210/p/CF1602.html)
+     - [CF323C Two permutations](https://www.cnblogs.com/Dfkuaid-210/p/CF323C.html)
+     - [CF386B Fly, freebies, fly!](https://www.cnblogs.com/Dfkuaid-210/p/CF386B.html)
+     - [CF864E Fire](https://www.cnblogs.com/Dfkuaid-210/p/CF864E.html)
+     - [CF1527D MEX Tree](https://www.cnblogs.com/Dfkuaid-210/p/CF1527D.html)
+     - [CF1534F1 Falling Sand (Easy Version)](https://www.cnblogs.com/Dfkuaid-210/p/CF1534F1.html)
+   - HDU
+     - [HDU5118 GRE Words Once More!](https://www.cnblogs.com/Dfkuaid-210/p/HDU5118.html)
+     - [HDU5634 Rikka with Phi](https://www.cnblogs.com/Dfkuaid-210/p/HDU5634.html)
+     - [HDU5756 Boss Bo](https://www.cnblogs.com/Dfkuaid-210/p/HDU5756.html)
+     - [HDU6315 Naive Operations](https://www.cnblogs.com/Dfkuaid-210/p/HDU6315.html)
+     - [HDU6606 Distribution of books](https://www.cnblogs.com/Dfkuaid-210/p/HDU6606.html)
+   - POJ
+     - [POJ3419 Difference Is Beautiful](https://www.cnblogs.com/Dfkuaid-210/p/POJ3419.html)
+   - UVA
+     - [UVA1519 Dictionary Size](https://www.cnblogs.com/Dfkuaid-210/p/UVA1519.html)
+     - [UVA10917 Walk Through the Forest](https://www.cnblogs.com/Dfkuaid-210/p/UVA10917.html)
+     - [UVA11478 Halum](https://www.cnblogs.com/Dfkuaid-210/p/UVA11478.html)
+   - Luogu
+     - [陌上花开](https://www.cnblogs.com/Dfkuaid-210/p/P3810.html)
+     - [洛谷 P1434 滑雪](https://www.cnblogs.com/Dfkuaid-210/p/11929130.html)
    - [关于我想了很久才想出这题咋做这档事 - 1](https://www.cnblogs.com/Dfkuaid-210/p/13828176.html)
    - [关于我想了很久才想出这题咋做这档事 - 2](https://www.cnblogs.com/Dfkuaid-210/p/14321305.html)
    - [关于我想了很久才想出这题咋做这档事 - 3](https://www.cnblogs.com/Dfkuaid-210/p/14361685.html)
@@ -116,12 +128,31 @@
    - ZROI
      - 21-CSP7连测
        - [ZROI-21-CSP7连-DAY1 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-CSP-DAY1.html)
+       - [ZROI-21-CSP7连-DAY2 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-CSP-DAY2.html)
+       - [ZROI-21-CSP7连-DAY3 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-CSP-DAY3.html)
+       - [ZROI-21-CSP7连-EXTRA1 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-CSP-EXTRA1.html)
+       - [ZROI-21-CSP7连-DAY4 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-CSP-DAY4.html)
+       - [ZROI-21-CSP7连-DAY5 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-CSP-DAY5.html)
+       - [ZROI-21-CSP7连-DAY6 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-CSP-DAY6.html)
+       - [ZROI-21-CSP7连-DAY7 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-CSP-DAY7.html)
      - 21-NOIP10连测
-       - [ZROI-21-NOIP10连-DAY1 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-DAY21.html)
+       - [ZROI-21-NOIP10连-DAY1 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-DAY1.html)
+       - [ZROI-21-NOIP10连-DAY2 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-DAY2.html)
+       - 咕咕咕～
+     - [ZROI-21-十一集训-赠送赛 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-1001-EXTRA.html)
+     - 21-NOIP冲刺
+       - [ZROI-21-NOIP冲刺-TEST1 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-SP-TEST1.html)
+       - [ZROI-21-NOIP冲刺-TEST2 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-SP-TEST2.html)
+       - [ZROI-21-NOIP冲刺-TEST3 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-SP-TEST3.html)
+       - [ZROI-21-NOIP冲刺-TEST4 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-SP-TEST4.html)
+       - [ZROI-21-NOIP冲刺-TEST6 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-SP-TEST6.html)
+       - [ZROI-21-NOIP冲刺-TEST7 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-SP-TEST7.html)
+       - [ZROI-21-NOIP冲刺-TEST9 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-SP-TEST9.html)
+       - [ZROI-21-NOIP冲刺-TEST10 总结](https://www.cnblogs.com/Dfkuaid-210/p/ZROI-21-NOIP-SP-TEST10.html)
    - [CSP2020-J 游记](https://www.cnblogs.com/Dfkuaid-210/p/13995414.html)
-     [![](https://images.cnblogs.com/cnblogs_com/Dfkuaid-210/1898736/o_201211070709key-new.png)](https://www.cnblogs.com/Dfkuaid-210/p/14120236.html)
+   - [CSP2021-S 游记](https://www.cnblogs.com/Dfkuaid-210/p/21-CSP-S.html)
 
-> 目前共计 $70$ 篇 $\tt Blog$，继续加油！
+> 目前共计 $95$ 篇 $\tt Blog$，继续加油！
 
 ---
 
@@ -197,9 +228,17 @@ CSP2020 就快到了，突然意识到如果我不想重蹈 2019 年的覆辙，
 
 $\mathfrak{2021.5.25}$ 推荐生考试通过，避开中考，得到 $3$ 个月的自由时间...
 
-## 仍在继续...
+## 干 tnd！
 
-> —— $\mathfrak{2021.6\sim\ ???}$
+> —— $\mathfrak{2021.6\sim\ 2021.8}$
+
+为去正睿学习准备、去正睿被虐菜...
+
+总之算是一个新的爆发期（好像上一个也是暑假来着）
+
+## 开学了...qtmd whk
+
+> —— $\mathfrak{2021.9\sim\ ???}$
 
 ヽ(。_°)ノ这里空空如也...等待书写
 
