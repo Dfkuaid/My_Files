@@ -6,8 +6,8 @@ import urllib.request
 
 name = 'try'
 b = os.getcwd()
-os.mkdir(b + '\\' + name)
+os.mkdir(b + '/' + name)
 
-respone = requests.get('http://img.mljzmm.com/comic/14339/057/0001.jpg')
-with open(b + '\\' + name + '\\' + 'a.jpg','wb') as f:
+respone = requests.get('https://pic.cnblogs.com/avatar/1855237/20200924170659.png')
+with open(b + '/' + name + '/' + 'a.jpg','wb') as f:
     f.write(respone.content)
