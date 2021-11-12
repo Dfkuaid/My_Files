@@ -15,7 +15,7 @@ template <typename T> inline void read(T &x) {
 
 struct Edge {int u, v, w, nxt, id;} ge[N], te[N];
 
-int ghead[N], gecnt(1), thead[N], tecnt(1), scnt, dif[N], ans[N];
+int ghead[N], gecnt(2), thead[N], tecnt(2), scnt, dif[N], ans[N];
 int n, m, p, stk[N], stp, dfn[N], low[N], T, instk[N], bel[N], vis[N];
 
 inline void add_edge_g(int u, int v, int w, int id) {
@@ -24,18 +24,17 @@ inline void add_edge_g(int u, int v, int w, int id) {
 }
 
 inline void add_edge_t(int u, int v, int w, int id) {
-    printf("%d %d\n", u, v);
     te[tecnt].u = u, te[tecnt].v = v, te[tecnt].w = w, te[tecnt].id = id;
     te[tecnt].nxt = thead[u], thead[u] = tecnt ++;
 }
 
-void tarjan(int x, int fa) {
+void tarjan(int x, int frm) {
     dfn[x] = low[x] = ++ T;
     stk[++ stp] = x, instk[x] = 1;
     for (int i = ghead[x]; i; i = ge[i].nxt) {
-        if (ge[i].v == fa) continue;
+        if (i == (frm ^ 1)) continue;
         if (!dfn[ge[i].v]) {
-            tarjan(ge[i].v, x);
+            tarjan(ge[i].v, i);
             low[x] = min(low[x], low[ge[i].v]);
         } else if (instk[ge[i].v])
           low[x] = min(low[x], dfn[ge[i].v]);
@@ -69,7 +68,6 @@ int main() {
         add_edge_g(u, v, 1, i), add_edge_g(v, u, -1, i);
     }
     for (int i = 1; i <= n; ++ i) if (!dfn[i]) tarjan(i, 0);
-    printf("scc_count: %d\n", scnt);
     for (int i = 1; i <= n; ++ i)
       for (int j = ghead[i]; j; j = ge[j].nxt)
         if (bel[ge[j].v] != bel[i])
@@ -77,7 +75,6 @@ int main() {
     read(p);
     for (int i = 1; i <= p; ++ i) {
         int u, v; read(u), read(v);
-        printf("Q: %d %d\n", u, v);
         ++ dif[bel[u]], -- dif[bel[v]];
     }
     for (int i = 1; i <= scnt; ++ i) if (!vis[i]) dfs(i, 0, 0, 0);
