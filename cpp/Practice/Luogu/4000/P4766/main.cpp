@@ -17,14 +17,14 @@ template <typename T> inline void read(T &x) {
 
 struct Enermy {int l, r, d;} p[N];
 
-int t, n, pos[M], cnt, f[N][N];
+int t, n, pos[M], cnt, f[M][M];
 
 inline void reset() {
     cnt = 0; memset(f, 0x3f, sizeof f);
 }
 
 inline void MAIN() {
-    read(n);
+    read(n); reset();
     for (int i = 1; i <= n; ++ i) {
         read(p[i].l), pos[++ cnt] = p[i].l;
         read(p[i].r), pos[++ cnt] = p[i].r;
@@ -40,13 +40,14 @@ inline void MAIN() {
       for (int l = 1, r = l + x - 1; r <= cnt; ++ l, ++ r) {
           int nl = 0, nr = 0, d = 0;
           for (int i = 1; i <= n; ++ i) if (l <= p[i].l && p[i].r <= r)
-            if (d < p[i].d) nl = p[i].l, nr = p[i].r;
+            if (d < p[i].d) nl = p[i].l, nr = p[i].r, d = p[i].d;
             else if (d == p[i].d) nl = min(nl, p[i].l), nr = max(nr, p[i].r);
+          if (!d) {f[l][r] = 0; continue;}
           for (int i = nl; i <= nr; ++ i) {
               int val = d;
-              if (i > nl) val += f[nl][i - 1];
-              if (i < nr) val += f[i + 1][nr];
-              f[nl][nr] = max(f[nl][nr], val);
+              if (i > l) val += f[l][i - 1];
+              if (i < r) val += f[i + 1][r];
+              f[l][r] = min(f[l][r], val);
           }
       }
     printf("%lld\n", f[1][cnt]);
