@@ -13,6 +13,8 @@ template <typename T> inline void read(T &x) {
     x *= f;
 }
 
+int n;
+
 int main() {
 #ifdef LOCAL
     freopen("in.txt", "r", stdin);
