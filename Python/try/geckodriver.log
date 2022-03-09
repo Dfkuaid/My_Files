@@ -80,3 +80,16 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 1636120165658	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 1636120181713	Marionette	INFO	Stopped listening on port 46817
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1645950610282	geckodriver	INFO	Listening on 127.0.0.1:59689
+1645950610287	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "46123" "-no-remote" "-profile" "/tmp/rust_mozprofileqKeoMe"
+1645950617255	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileqKeoMe/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:46123/devtools/browser/99e74af6-02f9-46cf-879b-5b637e78ca62
+1645950623601	Marionette	INFO	Listening on port 34507
+1645950623707	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.baidu.com"
+1645950670192	Marionette	INFO	Stopped listening on port 34507
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
